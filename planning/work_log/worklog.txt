@@ -1,3 +1,5 @@
 Document to capture worklog for the transaction visitor history project. Enter your initials, date and work description. For example:
 
 RS, 19/07/2021: Kick off meeting. Initial sketch of the project, tentative plan and outline of the project discussed
+
+SK, 22/07/2021: Learned how to work with github. Studied the original dataset and created an ipynb file to produces a dataset that captures the week 1 task.

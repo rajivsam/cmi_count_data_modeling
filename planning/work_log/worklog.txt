@@ -1,5 +1,0 @@
-Document to capture worklog for the transaction visitor history project. Enter your initials, date and work description. For example:
-
-RS, 19/07/2021: Kick off meeting. Initial sketch of the project, tentative plan and outline of the project discussed
-
-AI, 20/07/2021: Checked out the dataset. Learned git basics. Created a .ipynb file which can write a new csv file from the dataset as per the given task.

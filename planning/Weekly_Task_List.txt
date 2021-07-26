@@ -1,6 +1,7 @@
-Week Starting 19/07/2021:
-SK, AI: Get github user accounts
-SK, AI: (1) Download the online retail dataset from the UCI machine learning repository
-	(2) Read what the dataset represents from the description and perhaps the associated citation.
-	(3) The first milestone is to arrive at a dataset that captures for each business day, the number of registered store customers who made purchases during a particular hour of the day. So a row for a day, for example January 4 th, 2011, would be a row of 24 values corresponding to each hour of January 4 th 2011. Explore the data and see what you to do to arrive at this format. The data has plenty of issues. Document your understanding of the problem and your findings as you try to arrive at this format.
-	(4) Create a github branch, your_name_date, for example asif_iqbal_19_07_2021. Update worklog at the end of Friday with your weekly updates on the worklog and submit a pull request to merge your updates to the master branch. Make your changes on your branch, for example, asif_iqbal_19_07_2021. DO NOT WORK ON THE MASTER BRANCH. If this is unfamiliar to you read about (1) cloning the project repository (2) Creating a branch (3) Pushing the branch to github (4) Submitting a PR. Watch a youtube video or read a resource to learn about this.
+Agenda of week starting 26/07/2021:
+Discussion about dropping rows : The rows containing transactions made by unregistered customers and cancelled transactions are to be dropped.
+Week 2 tasks : (1) Find out the dates corresponding to which data is missing in the original dataset. Identify the pattern in those dates.
+		(2) Pivot the columns from 6 a.m. to 8 p.m. Find out the proportions of customers making transactions in those 14 hours i.e., in between 6 a.m. to 8 p.m.
+		(3) Assign quarters to each date in the dataset.
+		(4) Plot box plot for each of the 14 hours, from 6 a.m. to 8 p.m. corresponding to each quarter.
+		(5) Plot moving average of the 14 hours, from 6 a.m. to 8 p.m. corresponding to each quarter.

@@ -1,0 +1,9 @@
+The csv file https://github.com/rajivsam/cmi_count_data_modeling/blob/asif_ikbal_26_07_2021/customers_per_hour.csv is created from the data set https://archive.ics.uci.edu/ml/machine-learning-databases/00352/Online%20Retail.xlsx .
+
+Date: The date of the transactions.
+Count1: Total number of customers who made a transaction between 00:00:00 (Inclusive) and 01:00:00 (Exclusive) on a given date.
+Count2: Total number of customers who made a transaction between 01:00:00 (Inclusive) and 02:00:00 (Exclusive) on a given date.
+---
+Counti: Total number of customers who made a transaction between (i-1):00:00 (Inclusive) and i:00:00 (Exclusive) on a given date.
+---
+Count24: Total number of customers who made a transaction between 23:00:00 (Inclusive) and 00:00:00 (Exclusive) on a given date.

@@ -1,1 +1,3 @@
 SK, 23/07/2021: Learned how to work with github. Studied the original dataset and created an ipynb file that produces a dataset that captures the week 1 task.
+
+SK, 30/07/2021: Dropped the rows corresponding to unregistered customers and cancelled transactions. Wrote code for week 2 tasks. Plotted weekly MA plots for each quarter.

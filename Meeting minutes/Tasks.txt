@@ -1,5 +1,0 @@
-(1) Identify the pattern in dates were data is missing,
-(2) pivot the columns to 6 a.m. to 8 p.m.,
-(3) assign quarters to each day,
-(4) plot box plot for each hour of each quarter,
-(5) plot moving average for each hour of each quarter.

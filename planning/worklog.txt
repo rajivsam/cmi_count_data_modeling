@@ -1,3 +1,5 @@
 SK, 23/07/2021: Learned how to work with github. Studied the original dataset and created an ipynb file that produces a dataset that captures the week 1 task.
 
 SK, 30/07/2021: Dropped the rows corresponding to unregistered customers and cancelled transactions. Wrote code for week 2 tasks. Plotted weekly MA plots for each quarter.
+
+SK, 06/08/2021: Plotted weekly heatmap for data of 2011 and weekly heatmaps for data of each quarter of 2011. Studied about GAM (Generalized Additive Model). Built intuition about the nature of missing data.

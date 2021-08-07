@@ -9,3 +9,4 @@ AI, 30/07/2021: Inserted 0 values for all the missing dates and re-done all the 
 AI, 04/08/2021: Discussed some issues about the week number with SK and completed Week 3, Task 1.
 AI, 05/08/2021: Plotted the heatmaps to identify missing data.Studied GAM.
 AI, 06/08/2021: Redo the heatmaps for all quarters. Reviewed GAM. Studied differnt type of missing datas.
+AI, 07/08/2021: Reviewed the 3 missing data types- MCAR, MAR, MNAR and identified the missing types in our dataset.

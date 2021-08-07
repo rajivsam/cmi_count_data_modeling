@@ -5,3 +5,4 @@ AI, 28/07/2021: Dropped less important columns, Assigned quarter for all the dat
 AI, 29/07/2021: Plotted boxplot for all the quarter. Plotted the moving averages.
 SK, 30/07/2021: Dropped the rows corresponding to unregistered customers and cancelled transactions. Wrote code for week 2 tasks. Plotted weekly MA plots for each quarter.
 AI, 30/07/2021: Inserted 0 values for all the missing dates and re-done all the tasks.
+SK, 06/08/2021: Plotted weekly heatmap for data of 2011 and weekly heatmaps for data of each quarter of 2011. Studied about GAM (Generalized Additive Model). Built intuition about the nature of missing data.

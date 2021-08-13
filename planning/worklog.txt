@@ -10,3 +10,4 @@ AI, 04/08/2021: Discussed some issues about the week number with SK and complete
 AI, 05/08/2021: Plotted the heatmaps to identify missing data.Studied GAM.
 AI, 06/08/2021: Redo the heatmaps for all quarters. Reviewed GAM. Studied differnt type of missing datas.
 AI, 07/08/2021: Reviewed the 3 missing data types- MCAR, MAR, MNAR and identified the missing types in our dataset.
+SK, 13/08/2021: Created time series data of longest sequence of continuously available data for all 4 quarters of 2011. Plotted PACF (Partial Autocorrelation Function) plots for each of these time series data and identified the significant lags for each quarter. Constructed dataset based on these significant lags for each quarter.

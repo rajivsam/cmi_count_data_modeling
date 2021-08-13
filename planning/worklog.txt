@@ -14,3 +14,4 @@ AI, 09/08/2021: Studied pandas time series functionality. Agreed on week convent
 AI, 10/08/2021: Studied PACF, reviewed pandas time series functionality.
 AI, 11/08/2021: Reviewed PACF, pandas time series functionality.Discussed with SK about the implementation of the tasks.
 AI, 12/08/2021: Completed task 1 of this week.
+AI, 13/08/2021: Completed task 2 for week 4

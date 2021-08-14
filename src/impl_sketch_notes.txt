@@ -1,0 +1,44 @@
+(1) LocalDataFrameLoader (implementation sketch):
+create an object variable, df
+Read data file from data directory in the git repo
+create a pandas dataframe assign it to df
+return self.df
+
+(2) RetailDataProcessing(implementation sketch):
+filter method: 
+objective: implement the business rules to remove the unwanted transactions and return a filtered data frame
+parameters of the method, pass the dataframe reference and any other parameters you need to apply the filter
+return a filtered dataframe
+
+transform method:
+objective: implement the transformation of the filtered dataframe to return a dataframe with daily counts over the hour window
+parameters: filtered dataframe and anything else you need to perform the processing
+return filtered dataframe 
+
+New method, drop_columns(implementation sketch):
+objective: drop the hour windows that have excess zeros (hours outside the 6 AM to 8 PM) range
+parameters: dataframe after the transform method has been applied and anything else you need
+filtered dataframe
+
+subset method:
+objective: implement the subsetting of the dataframe of counts into four quarters
+
+New method, transform_pacf_sequence:
+objective: take the dataframe of daily hourly counts and return a pandas timeseries for PACF analysis of quarters
+parameters: A dataframe of daily hourly counts for a quarter and any other parameters you need.
+
+New method: transform_hourly_arrivals_dataset
+objective: take the daily hourly counts dataframe and lag parameter for a quarter and generate the dataset with auto-regressive and temporal atrributes for each hour and day for the quarter
+parameters: A dataframe of daily hourly counts for a quarter and the lag information for the quarter and anything else you need to generate the hourly dataset for the predictive modeling task.
+
+
+Notebook sketch:
+(1) Instantiate a LocalDataFrame loader
+(2) Instantiate a RetailDataProcessing object
+	(a) Invoke the filter method to apply business rules
+	(b) Invoke the transform method to get daily hourly counts
+	(c) Subset dataframe to quarters, do the different moving average and box plots to show that there is variation in arrival counts across different time scales and the nature of this variation is complex
+	(d)Invoke the tansform pacf_sequence to get the pandas time series for different quarters and plot the PACF for each quarter
+	(e) Invoke the transform_hourly_arrivals_dataset to generate the datasets for the different quarters, save the dataset to the data directory.
+	
+

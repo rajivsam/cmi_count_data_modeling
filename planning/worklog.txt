@@ -17,3 +17,4 @@ AI, 12/08/2021: Completed task 1 of this week.
 AI, 13/08/2021: Completed task 2 for week 4
 SK, 13/08/2021: Created time series data of longest sequence of continuously available data for all 4 quarters of 2011. Plotted PACF (Partial Autocorrelation Function) plots for each of these time series data and identified the significant lags for each quarter. Constructed dataset based on these significant lags for each quarter.
 AI, 20/08/2021: Constructed LocalDataFrameLoader and RetailDataProcessing for retail dataset. Saved the required data files. All works done together with SK.
+SK, 20/08/2021: Worked together with AI to construct LocalDataFrameLoader and RetailDataProcessing and generated data files.

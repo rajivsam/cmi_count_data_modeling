@@ -25,9 +25,9 @@ Month: Month number
 # Importing the modules
 import sys
 sys.path.append('./data_loading')
-from retail_data_processing import *
-sys.path.append('./data_processing')
 from local_dataframe_loader import *
+sys.path.append('./data_processing')
+from retail_data_processing import *
 
 # Instantiating a LocalDataFrame loader
 x = LocalDataFrameLoader()

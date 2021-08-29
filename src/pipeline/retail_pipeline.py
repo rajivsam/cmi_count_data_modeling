@@ -8,7 +8,7 @@ This script creates the required hourly arrival datasets for all 4 quarter in th
 
 Dependencies
 ------------
-Files and Folders: This python file 'retail_pipeline.py' and two directories 'data_loading', 'data_processing' shpuld be in the current working directory.
+Files and Folders: This python file 'retail_pipeline.py' is in current working directory and two directories 'data_loading', 'data_processing' should be in the parent directory.
 'data_loading' contains 'local_dataframe_loader.py' and 'abstract_dataframe_loader.py'
 'data_processing' contains 'retail_data_processing.py' and 'abstract_data_processing.py'
 
@@ -24,9 +24,9 @@ Month: Month number
 """
 # Importing the modules
 import sys
-sys.path.append('./data_loading')
+sys.path.append('../data_loading')
 from local_dataframe_loader import *
-sys.path.append('./data_processing')
+sys.path.append('../data_processing')
 from retail_data_processing import *
 
 # Instantiating a LocalDataFrame loader
@@ -72,6 +72,6 @@ for i in range(1, 5):
 
 # Write all the dataframes as csv files
 for i in range(1, 5):
-    df['Q'+str(i)].to_csv('../data/Q'+str(i) +
+    df['Q'+str(i)].to_csv('../../data/Q'+str(i) +
                           '_transform_hourly_arrivals_dataset.csv')
 

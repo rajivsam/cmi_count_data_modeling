@@ -17,6 +17,6 @@ class LocalDataFrameLoader(DataFrameLoader):
         Input of this method is the dataset of the project. This method converts the dataset into a pandas dataframe and returns the dataframe.
         """
         
-        self.df= pd.read_excel('https://github.com/rajivsam/cmi_count_data_modeling/blob/data_branch/data/Online%20Retail.xlsx?raw=true')
+        self.df= pd.read_excel('https://github.com/rajivsam/cmi_count_data_modeling/raw/main/data/Online%20Retail.xlsx')
         return self.df
  

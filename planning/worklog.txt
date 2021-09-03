@@ -20,3 +20,4 @@ AI, 20/08/2021: Constructed LocalDataFrameLoader and RetailDataProcessing for re
 SK, 20/08/2021: Worked together with AI to construct LocalDataFrameLoader and RetailDataProcessing and generated data files.
 SK, 27/08/2021: Cloned the work branch, added src directory to the path; added doc string; documented notebook; completed EDA documentation.
 SK, 27/08/2021: Fixed the dependencies in source codes, completed EDA, completed the python script to generate the data sets and updated the doc strings.
+SK, 03/09/2021: Fiited GAM for poisson and negative binomial family to the quarter 1 dataset; developped undertstanding as to which model is better and why.

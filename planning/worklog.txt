@@ -22,3 +22,4 @@ SK, 27/08/2021: Cloned the work branch, added src directory to the path; added d
 AI, 27/08/2021: Fixed the dependencies in source codes, completed EDA, completed the python script to generate the data sets and updated the doc strings.
 SK, 03/09/2021: Fiited GAM for poisson and negative binomial family to the quarter 1 dataset; developped undertstanding as to which model is better and why.
 AI, 03/09/2021: Used Decesion Tree Regressor to predict the hourly arrival in quarter 1.
+SK, 10/09/2021: Split the quarter dataset into 70-30 train-test dataset; Observed a monthly variation in the data resulting in different model selection for different set.seed values based on AIC values; Split the quarter dataset into 3 monthly datasets.

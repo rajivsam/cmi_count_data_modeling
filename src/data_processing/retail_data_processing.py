@@ -90,10 +90,10 @@ class RetailDataProcessing(DataProcessing):
             Q4=data.loc[data['offset'].dt.isocalendar().week>39].copy()
 
             data.drop(columns=['offset'],inplace=True)
-            Q1.drop(columns=['offset'],inplace=True)
-            Q2.drop(columns=['offset'],inplace=True)
-            Q3.drop(columns=['offset'],inplace=True)
-            Q4.drop(columns=['offset'],inplace=True)
+            Q1.drop(columns=['offset','index'],inplace=True)
+            Q2.drop(columns=['offset','index'],inplace=True)
+            Q3.drop(columns=['offset','index'],inplace=True)
+            Q4.drop(columns=['offset','index'],inplace=True)
 
             subset_data={'Q1':Q1,'Q2':Q2,'Q3':Q3,'Q4':Q4}
         return subset_data

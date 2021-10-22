@@ -67,9 +67,11 @@ class RetailDataProcessing(DataProcessing):
         return data
 
     def subset(self,data,monthly=False,months=[1,2,3],inplace=True, **kwargs):
-        """ Produces a dataframe divided into four quarters of 2011.
+        """ Produces a dataframe divided into four quarters of 2011 or the months provided.
 
-        Input of this method is the filtered dataframe. In this method rows containing the data of 2010 is dropped and the dataframes corresponding to each of quarter of 2011 is created using week number. This method returns dataframes of all four quarters. Output['Q1'] produces dataframe of quarter 1 and so on. If inplace is False then the method returns a copy of the updated dataframe; otherwise updates the input dataframe in place and returns nothing. Default is inplace = True.
+        Input of this method is the filtered dataframe. In this method rows containing the data of 2010 is dropped.
+        If monthly is False this method creates dataframes corresponding to each of quarter of 2011 using week number and returns dataframes of all four quarters. Output['Q1'] produces dataframe of quarter 1 and so on. If monthly is True the method creates dataframe of the months of 2011 provided in the argument and returns dataframe of all these months in the similar fashion as to the quarters. Default months are 1st, 2nd and 3rd i.e, months of the 1st quarter. Default is monthly = False.
+        If inplace is False then the method returns a copy of the updated dataframe; otherwise updates the input dataframe in place and returns nothing. Default is inplace = True.
         """
 
         if not inplace:
@@ -99,9 +101,9 @@ class RetailDataProcessing(DataProcessing):
         return subset_data
 
     def transform_pacf_sequence(self,data,inplace=False):
-        """ Creates a timeseries for longest sequence of continuously available data of a quarter.
+        """ Creates a timeseries for longest sequence of continuously available data of a time frame.
 
-        Input of this method is dataframe of a quarter. This method detects longest sequence of continuously available data in the given dataframe; for that sequence of data, combines the pivoted time columns and date indices to form timeseries index of timestamp object, flattens the 2D values into 1D values and returns a timeseries data. If inplace is False then the method returns a copy of the updated dataframe; otherwise updates the input dataframe in place and returns nothing. Default is inplace = False.
+        Input of this method is dataframe of a time frame. This method detects longest sequence of continuously available data in the given dataframe; for that sequence of data, combines the pivoted time columns and date indices to form timeseries index of timestamp object, flattens the 2D values into 1D values and returns a timeseries data. If inplace is False then the method returns a copy of the updated dataframe; otherwise updates the input dataframe in place and returns nothing. Default is inplace = False.
         """
 
         if not inplace:
@@ -141,10 +143,11 @@ class RetailDataProcessing(DataProcessing):
 
         return ts
 
-    def transform_hourly_arrivals_dataset(self,data,lag):
-        """ Creates a dataframe with columns being arrivals of previous hours on which arrivals of a specific hour is dependent, arrivals of that specific hour and day, week, month corresponding to that specific hour.
+    def transform_hourly_arrivals_dataset(self,data,lag,monthly=False):
+        """ Creates a dataframe with columns being arrivals of previous hours on which arrivals of a specific hour is dependent, arrivals of that specific hour and day, week, month(optional) corresponding to that specific hour.
 
-        Input of this method is timeseries data of a quarter and list of lags for that quarter. In this method, the previous hours on which a specific hour is dependent and their arrivals are calculated using the list of lags. The method returns a dataframe with columns being these arrivals, arrival, day, week, month corresponding to that specific hour and index being the hours for which data for the columns are available.
+        Input of this method is timeseries data of a time frame and list of lags for that time frame. In this method, the previous hours on which a specific hour is dependent and their arrivals are calculated using the list of lags. 
+        If monthly is False the method returns a dataframe of a quarter with columns being these arrivals, arrival, day, week, month corresponding to that specific hour and index being the hours for which data for the columns are available; otherwise the method returns a dataframe of a month with similar columns excluding the column 'Month'. Default is monthly = False.
         """
 
         l=max(lag)
@@ -157,4 +160,6 @@ class RetailDataProcessing(DataProcessing):
         df['Month']=list(data.index.month)[l:len(data)]
         df['arr(h)']=list(data)[l:len(data)]
         df.set_index('h',inplace=True)
+        if monthly:
+            df.drop(columns='Month',inplace=True)
         return df

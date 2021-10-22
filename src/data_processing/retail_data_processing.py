@@ -81,7 +81,7 @@ class RetailDataProcessing(DataProcessing):
 
         if monthly:
             for month in months:
-                subset_data['M'+str(month)]=data.loc[data['Date'].dt.month==month]
+                subset_data['M'+str(month)]=data.loc[data['Date'].dt.month==month].drop(columns=['index'])
         else:
             data['offset']=pd.DatetimeIndex(data['Date'])+pd.DateOffset(1)
             Q1=data.loc[(data['offset'].dt.isocalendar().week>0) & (data['offset'].dt.isocalendar().week<=13)].copy()

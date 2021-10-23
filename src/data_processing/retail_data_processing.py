@@ -66,11 +66,11 @@ class RetailDataProcessing(DataProcessing):
         data.drop(columns=col,inplace=True)
         return data
 
-    def subset(self,data,monthly=False,months=[1,2,3],inplace=True, **kwargs):
+    def subset(self,data,quarter=False,months=[1,2,3],inplace=True, **kwargs):
         """ Produces a dataframe divided into four quarters of 2011 or the months provided.
 
         Input of this method is the filtered dataframe. In this method rows containing the data of 2010 is dropped.
-        If monthly is False this method creates dataframes corresponding to each of quarter of 2011 using week number and returns dataframes of all four quarters. Output['Q1'] produces dataframe of quarter 1 and so on. If monthly is True the method creates dataframe of the months of 2011 provided in the argument and returns dataframe of all these months in the similar fashion as to the quarters. Default months are 1st, 2nd and 3rd i.e, months of the 1st quarter. Default is monthly = False.
+        If quarter is True this method creates dataframes corresponding to each of quarter of 2011 using week number and returns dataframes of all four quarters. Output['Q1'] produces dataframe of quarter 1 and so on. If quarter is False the method creates dataframe of the months of 2011 provided in the argument and returns dataframe of all these months in the similar fashion as to the quarters. Default months are 1st, 2nd and 3rd i.e, months of the 1st quarter. Default is quarter = False.
         If inplace is False then the method returns a copy of the updated dataframe; otherwise updates the input dataframe in place and returns nothing. Default is inplace = True.
         """
 
@@ -81,7 +81,7 @@ class RetailDataProcessing(DataProcessing):
         data.drop(data[data.Date.dt.isocalendar().year==2010].index,inplace=True)
         subset_data={}
 
-        if monthly:
+        if not quarter:
             for month in months:
                 subset_data['M'+str(month)]=data.loc[data['Date'].dt.month==month].drop(columns=['index'])
         else:
@@ -146,7 +146,7 @@ class RetailDataProcessing(DataProcessing):
     def transform_hourly_arrivals_dataset(self,data,lag,monthly=False):
         """ Creates a dataframe with columns being arrivals of previous hours on which arrivals of a specific hour is dependent, arrivals of that specific hour and day, week, month(optional) corresponding to that specific hour.
 
-        Input of this method is timeseries data of a time frame and list of lags for that time frame. In this method, the previous hours on which a specific hour is dependent and their arrivals are calculated using the list of lags. 
+        Input of this method is timeseries data of a time frame and list of lags for that time frame. In this method, the previous hours on which a specific hour is dependent and their arrivals are calculated using the list of lags.
         If monthly is False the method returns a dataframe of a quarter with columns being these arrivals, arrival, day, week, month corresponding to that specific hour and index being the hours for which data for the columns are available; otherwise the method returns a dataframe of a month with similar columns excluding the column 'Month'. Default is monthly = False.
         """
 

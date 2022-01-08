@@ -48,12 +48,16 @@ transformed_data = y.transform(filtered_data)
 dropped_data = y.drop_columns(transformed_data)
 
 # (c) Subset dataframe to quarters
-subset_data = y.subset(dropped_data)
+subset_quarter = y.subset(dropped_data,quarter=True)
+subset_month = y.subset(dropped_data)
 
 # (d)Invoke the tansform pacf_sequence to get the pandas time series for different quarters
-Q_ts = {}
-for i in range(1, 5):
-    Q_ts[i] = y.transform_pacf_sequence(subset_data['Q'+str(i)])
+ts = {}
+for k in subset_quarter.keys():
+    ts[k] = y.transform_pacf_sequence(subset_data[k])
+for k in subset_month.keys():
+    ts[k] = y.transform_pacf_sequence(subset_month[k])
+
 
 
 lag = {}
@@ -63,15 +67,17 @@ lag['Q2'] = [20, 15, 14, 13, 12, 11, 10, 7, 6, 5, 4, 3, 1]
 lag['Q3'] = [28, 26, 22, 20, 18, 14, 13, 12, 11, 7, 6, 5, 4, 3, 2, 1]
 lag['Q4'] = [28, 25, 24, 20, 19, 18, 14, 13, 12, 11, 10, 9, 6, 5, 4, 3, 1]
 
+lag['M1'] = [25,14,13,11,7,6,5,4,3,1]
+lag['M2'] = [18,14,13,12,10,7,6,5,4,3,1]
+lag['M3'] = [26,19,12,11,10,7,6,5,4,3,2,1]
+
 #	(e) Invoke the transform_hourly_arrivals_dataset to generate the datasets for the different quarters, save the dataset to the data directory.
 df = {}
-for i in range(1, 5):
-    df['Q'+str(i)] = y.transform_hourly_arrivals_dataset(Q_ts[i],
-                                                         lag=lag['Q'+str(i)])
+for k in lag.keys():
+    df[k] = y.transform_hourly_arrivals_dataset(ts[k],lag=lag[k])
 
 
 # Write all the dataframes as csv files
-for i in range(1, 5):
-    df['Q'+str(i)].to_csv('../../data/Q'+str(i) +
+for k in df.keys():
+    df[k].to_csv('../../data/'+str(k) +
                           '_transform_hourly_arrivals_dataset.csv')
-
